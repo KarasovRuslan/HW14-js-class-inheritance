@@ -26,6 +26,4 @@ function AssemblyClock(e) {
 AssemblyClock.prototype = this.Clock.prototype;
 let assembly = new AssemblyClock(clockTime);
 
-setInterval(() => {
-    assembly.render() 
-}, 250);
+setInterval(() => assembly.render(), 250);
