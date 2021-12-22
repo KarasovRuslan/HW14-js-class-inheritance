@@ -3,6 +3,7 @@ let clockTime = document.getElementById('clockTime');
 function Clock(e) {
     this.clockTime = e;
     this.isFullFormat = true;
+    this.clockTime.addEventListener('click', () => this.switchFormat());
 };
 
 function AssemblyClock(e) {
@@ -24,12 +25,6 @@ function AssemblyClock(e) {
 
 AssemblyClock.prototype = this.Clock.prototype;
 let assembly = new AssemblyClock(clockTime);
-
-clockTime.addEventListener('click', (e) => {
-    if(e.target.tagName === 'DIV') {
-        assembly.switchFormat();
-    }
-});
 
 setInterval(() => {
     assembly.render() 
