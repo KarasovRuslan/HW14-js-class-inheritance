@@ -9,7 +9,7 @@ function Clock(e) {
 function AssemblyClock(e) {
     Clock.call(this, e);
     
-    Clock.prototype.render = function () {
+    Clock.prototype.render = function() {
         let date = new Date();
         this.hours = (date.getHours() < 10) ? '0' + date.getHours() : date.getHours(); 
         this.minutes = (date.getMinutes() < 10) ? '0' + date.getMinutes() : date.getMinutes();  
