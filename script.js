@@ -4,6 +4,9 @@ function Clock(e) {
     this.clockTime = e;
     this.isFullFormat = true;
     this.clockTime.addEventListener('click', () => this.switchFormat());
+    this.hours;
+    this.minutes;
+    this.seconds
 };
 
 function AssemblyClock(e) {
@@ -23,7 +26,7 @@ function AssemblyClock(e) {
     };
 };
 
-AssemblyClock.prototype = this.Clock.prototype;
+AssemblyClock.prototype = Object.create(Clock.prototype);
 let assembly = new AssemblyClock(clockTime);
 
 setInterval(() => assembly.render(), 250);
